@@ -443,12 +443,12 @@ els.viewList?.addEventListener('click', () => switchView('list'));
 els.logout?.addEventListener('click', async () => { try { await fetch('/api/logout', { method: 'POST' }); } catch(_) {} location.replace('/html/login.html'); });
 
 // 批量操作按钮
-els.batchAllow?.addEventListener('click', () => openBatchModal('allow', '批量放行登录', '✅', '输入要允许登录的邮箱地址（每行一个或用逗号分隔）：'));
-els.batchDeny?.addEventListener('click', () => openBatchModal('deny', '批量禁止登录', '🚫', '输入要禁止登录的邮箱地址（每行一个或用逗号分隔）：'));
-els.batchFavorite?.addEventListener('click', () => openBatchModal('favorite', '批量收藏', '⭐', '输入要收藏的邮箱地址（每行一个或用逗号分隔）：'));
-els.batchUnfavorite?.addEventListener('click', () => openBatchModal('unfavorite', '批量取消收藏', '☆', '输入要取消收藏的邮箱地址（每行一个或用逗号分隔）：'));
-els.batchForward?.addEventListener('click', () => openBatchModal('forward', '批量设置转发', '↪️', '输入要设置转发的邮箱地址（每行一个或用逗号分隔）：'));
-els.batchClearForward?.addEventListener('click', () => openBatchModal('clear-forward', '批量清除转发', '🚫', '输入要清除转发的邮箱地址（每行一个或用逗号分隔）：'));
+els.batchAllow?.addEventListener('click', () => openBatchModal('allow', '批量放行登录', '<i data-lucide="check"></i>', '输入要允许登录的邮箱地址（每行一个或用逗号分隔）：'));
+els.batchDeny?.addEventListener('click', () => openBatchModal('deny', '批量禁止登录', '<i data-lucide="x-circle"></i>', '输入要禁止登录的邮箱地址（每行一个或用逗号分隔）：'));
+els.batchFavorite?.addEventListener('click', () => openBatchModal('favorite', '批量收藏', '<i data-lucide="star"></i>', '输入要收藏的邮箱地址（每行一个或用逗号分隔）：'));
+els.batchUnfavorite?.addEventListener('click', () => openBatchModal('unfavorite', '批量取消收藏', '<i data-lucide="star"></i>', '输入要取消收藏的邮箱地址（每行一个或用逗号分隔）：'));
+els.batchForward?.addEventListener('click', () => openBatchModal('forward', '批量设置转发', '<i data-lucide="forward"></i>', '输入要设置转发的邮箱地址（每行一个或用逗号分隔）：'));
+els.batchClearForward?.addEventListener('click', () => openBatchModal('clear-forward', '批量清除转发', '<i data-lucide="x-circle"></i>', '输入要清除转发的邮箱地址（每行一个或用逗号分隔）：'));
 
 // 批量操作模态框事件
 els.batchModalClose?.addEventListener('click', closeBatchModal);

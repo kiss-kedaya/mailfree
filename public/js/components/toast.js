@@ -43,12 +43,12 @@ export async function showToast(message, type = 'info', duration = 3000) {
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
   
-  // 图标映射
-  const icons = {
-    success: '✓',
-    error: '✕',
-    warning: '⚠',
-    info: 'ℹ'
+  // 图标映射（使用 Lucide 图标名称）
+  const iconNames = {
+    success: 'check',
+    error: 'x',
+    warning: 'alert-triangle',
+    info: 'info'
   };
   
   // 背景色映射
@@ -75,7 +75,7 @@ export async function showToast(message, type = 'info', duration = 3000) {
   `;
   
   toast.innerHTML = `
-    <span style="font-size: 16px;">${icons[type] || icons.info}</span>
+    <span class="toast-icon"><i data-lucide="${iconNames[type] || iconNames.info}"></i></span>
     <span>${message}</span>
   `;
   

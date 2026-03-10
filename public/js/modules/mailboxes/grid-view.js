@@ -77,10 +77,10 @@ export function renderMailboxCard(mailbox, options = {}) {
     <div class="mailbox-card ${isPinned ? 'pinned' : ''}" data-address="${escapedAddress}">
       <div class="card-header">
         <div class="pin-status" title="${isPinned ? '已置顶' : '未置顶'}">
-          ${isPinned ? '📌' : ''}
+          ${isPinned ? '<i data-lucide="pin"></i>' : ''}
         </div>
         <div class="favorite-status ${isFavorite ? 'active' : ''}" title="${isFavorite ? '已收藏' : '未收藏'}">
-          ${isFavorite ? '⭐' : '☆'}
+          <i data-lucide="star"></i>
         </div>
       </div>
       
@@ -88,24 +88,24 @@ export function renderMailboxCard(mailbox, options = {}) {
         <div class="mailbox-address" title="${escapedAddress}">${displayAddress}</div>
         <div class="mailbox-meta">
           <span class="created-time">${createdAt}</span>
-          ${forwardTo ? `<span class="forward-indicator" title="转发至: ${escapeAttr(forwardTo)}">📤</span>` : ''}
-          ${canLogin ? '<span class="login-indicator" title="可登录">🔑</span>' : ''}
+          ${forwardTo ? `<span class="forward-indicator" title="转发至: ${escapeAttr(forwardTo)}"><i data-lucide="forward"></i></span>` : ''}
+          ${canLogin ? '<span class="login-indicator" title="可登录"><i data-lucide="key"></i></span>' : ''}
         </div>
       </div>
       
       <div class="card-actions">
-        <button class="btn btn-sm btn-copy" data-action="copy" title="复制地址">📋</button>
-        <button class="btn btn-sm btn-jump" data-action="jump" title="查看邮件">📧</button>
-        <button class="btn btn-sm btn-pin ${isPinned ? 'active' : ''}" data-action="pin" title="${isPinned ? '取消置顶' : '置顶'}">📍</button>
-        <button class="btn btn-sm btn-favorite ${isFavorite ? 'active' : ''}" data-action="favorite" title="${isFavorite ? '取消收藏' : '收藏'}">⭐</button>
+        <button class="btn btn-sm btn-copy" data-action="copy" title="复制地址"><i data-lucide="copy"></i></button>
+        <button class="btn btn-sm btn-jump" data-action="jump" title="查看邮件"><i data-lucide="mail"></i></button>
+        <button class="btn btn-sm btn-pin ${isPinned ? 'active' : ''}" data-action="pin" title="${isPinned ? '取消置顶' : '置顶'}"><i data-lucide="pin"></i></button>
+        <button class="btn btn-sm btn-favorite ${isFavorite ? 'active' : ''}" data-action="favorite" title="${isFavorite ? '取消收藏' : '收藏'}"><i data-lucide="star"></i></button>
         <button class="btn btn-sm btn-more" data-action="more" title="更多操作">⋯</button>
       </div>
       
       <div class="card-dropdown" style="display: none;">
-        <button class="dropdown-item" data-action="forward">📤 设置转发</button>
-        <button class="dropdown-item" data-action="toggle-login">🔑 ${canLogin ? '禁止登录' : '允许登录'}</button>
-        <button class="dropdown-item" data-action="change-password">🔒 ${passwordIsDefault ? '设置密码' : '修改密码'}</button>
-        <button class="dropdown-item danger" data-action="delete">🗑️ 删除邮箱</button>
+        <button class="dropdown-item" data-action="forward"><i data-lucide="forward"></i> 设置转发</button>
+        <button class="dropdown-item" data-action="toggle-login"><i data-lucide="key"></i> ${canLogin ? '禁止登录' : '允许登录'}</button>
+        <button class="dropdown-item" data-action="change-password"><i data-lucide="lock"></i> ${passwordIsDefault ? '设置密码' : '修改密码'}</button>
+        <button class="dropdown-item danger" data-action="delete"><i data-lucide="trash-2"></i> 删除邮箱</button>
       </div>
     </div>
   `;

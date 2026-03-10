@@ -115,7 +115,7 @@ export function showSentEmailDetail(email, elements) {
   
   const e = email;
   modalSubject.innerHTML = `
-    <span class="modal-icon">📤</span>
+    <span class="modal-icon"><i data-lucide="send"></i></span>
     <span>${escapeHtml(e.subject || '(无主题)')}</span>
   `;
   

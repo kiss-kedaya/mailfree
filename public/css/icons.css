@@ -1,0 +1,158 @@
+/* =============================================
+   Lucide Icons Integration - Vercel Style
+   极简图标系统
+   ============================================= */
+
+/* Lucide Icons 基础样式 */
+.lucide {
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* 图标尺寸变体 */
+.icon-xs .lucide { width: 14px; height: 14px; }
+.icon-sm .lucide { width: 16px; height: 16px; }
+.icon-md .lucide { width: 20px; height: 20px; }
+.icon-lg .lucide { width: 24px; height: 24px; }
+.icon-xl .lucide { width: 32px; height: 32px; }
+
+/* 按钮中的图标 */
+.btn-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn .lucide {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-sm .lucide {
+  width: 14px;
+  height: 14px;
+}
+
+/* 卡片图标 */
+.card-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.card-icon-wrapper .lucide {
+  width: 20px;
+  height: 20px;
+}
+
+/* 侧边栏图标 */
+.sidebar-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.sidebar-icon-wrapper .lucide {
+  width: 18px;
+  height: 18px;
+}
+
+/* Logo 图标 */
+.logo-icon .lucide {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.5;
+}
+
+/* 状态图标 */
+.status-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-icon .lucide {
+  width: 16px;
+  height: 16px;
+}
+
+/* 空状态图标 */
+.empty-icon .lucide {
+  width: 64px;
+  height: 64px;
+  stroke-width: 1;
+  opacity: 0.3;
+}
+
+/* 徽章图标 */
+.badge-icon .lucide {
+  width: 12px;
+  height: 12px;
+}
+
+/* 动作按钮图标 */
+.action-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.action-icon:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.action-icon .lucide {
+  width: 16px;
+  height: 16px;
+}
+
+/* Vercel 风格 - 图标颜色继承 */
+.icon-inherit {
+  color: inherit;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .action-icon:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  .empty-icon .lucide {
+    opacity: 0.4;
+  }
+}
+
+/* 图标动画（可选，Vercel风格建议禁用） */
+.icon-spin .lucide {
+  animation: icon-spin 1s linear infinite;
+}
+
+@keyframes icon-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 图标脉冲效果（用于加载状态） */
+.icon-pulse .lucide {
+  animation: icon-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

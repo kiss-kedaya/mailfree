@@ -205,7 +205,7 @@ export async function batchSetFavorite(mailboxIds, isFavorite) {
  */
 export function renderForwardBadge(forwardTo) {
   if (!forwardTo) return '';
-  return `<span class="badge badge-forward" title="转发到: ${escapeHtml(forwardTo)}">↪️</span>`;
+  return `<span class="badge badge-forward" title="转发到: ${escapeHtml(forwardTo)}"><i data-lucide="forward"></i></span>`;
 }
 
 /**
@@ -214,7 +214,7 @@ export function renderForwardBadge(forwardTo) {
  * @returns {string} HTML 字符串
  */
 export function renderFavoriteBadge(isFavorite) {
-  return isFavorite ? '<span class="badge badge-favorite" title="已收藏">⭐</span>' : '';
+  return isFavorite ? '<span class="badge badge-favorite" title="已收藏"><i data-lucide="star"></i></span>' : '';
 }
 
 /**
@@ -228,7 +228,7 @@ export function createForwardButton(mailboxId, mailboxAddress, forwardTo) {
   const btn = document.createElement('button');
   btn.className = 'btn btn-ghost btn-sm';
   btn.title = forwardTo ? `转发到: ${forwardTo}` : '设置转发';
-  btn.innerHTML = forwardTo ? '↪️' : '➡️';
+  btn.innerHTML = '<i data-lucide="forward"></i>';
   btn.onclick = (e) => {
     e.stopPropagation();
     openForwardDialog(mailboxId, mailboxAddress, forwardTo);
@@ -247,7 +247,7 @@ export function createFavoriteButton(mailboxId, isFavorite, onUpdate) {
   const btn = document.createElement('button');
   btn.className = 'btn btn-ghost btn-sm';
   btn.title = isFavorite ? '取消收藏' : '收藏';
-  btn.innerHTML = isFavorite ? '⭐' : '☆';
+  btn.innerHTML = '<i data-lucide="star"></i>';
   btn.onclick = async (e) => {
     e.stopPropagation();
     const result = await toggleFavorite(mailboxId);

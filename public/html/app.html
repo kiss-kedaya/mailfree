@@ -1,24 +1,24 @@
 <div class="topbar">
   <div class="brand">
-    <span class="brand-icon">📧</span>
+    <span class="brand-icon"><i data-lucide="mail"></i></span>
     <span class="brand-text">iDing's临时邮箱</span>
   </div>
   <div id="role-badge" class="role-badge" title="欢迎用户："></div>
   <div class="nav-actions">
     <a id="repo" class="btn btn-ghost" href="https://github.com/idinging/freemail" target="_blank" rel="noopener noreferrer" title="GitHub 开源仓库">
-      <span class="btn-icon">🔗</span>
+      <span class="btn-icon"><i data-lucide="external-link"></i></span>
       <span class="btn-text">GitHub</span>
     </a>
     <a id="admin" class="btn btn-ghost" href="/templates/loading.html?redirect=%2Fadmin.html&status=%E6%AD%A3%E5%9C%A8%E6%A0%A1%E9%AA%8C%E6%9D%83%E9%99%90%E2%80%A6" title="用户管理" style="display:none">
-      <span class="btn-icon">🛠️</span>
+      <span class="btn-icon"><i data-lucide="settings"></i></span>
       <span class="btn-text">用户管理</span>
     </a>
     <a id="all-mailboxes" class="btn btn-ghost" href="/templates/loading.html?redirect=%2Fhtml%2Fmailboxes.html&status=%E6%AD%A3%E5%9C%A8%E6%89%93%E5%BC%80%E9%82%AE%E7%AE%B1%E6%80%BB%E8%A7%88%E9%A1%B5%E9%9D%A2%E2%80%A6" title="所有邮箱" style="display:none">
-      <span class="btn-icon">📦</span>
+      <span class="btn-icon"><i data-lucide="box"></i></span>
       <span class="btn-text">所有邮箱</span>
     </a>
     <button id="logout" class="btn btn-secondary" title="退出登录">
-      <span class="btn-icon">🚪</span>
+      <span class="btn-icon"><i data-lucide="log-out"></i></span>
       <span class="btn-text">退出登录</span>
     </button>
   </div>
@@ -28,7 +28,7 @@
     <div class="sidebar">
       <div class="sidebar-header">
         <h3>
-          <span class="sidebar-icon">📨</span>
+          <span class="sidebar-icon"><i data-lucide="mail"></i></span>
           <span class="sidebar-title">历史邮箱</span>
         </h3>
         <div class="sidebar-header-actions">
@@ -55,7 +55,7 @@
     <div class="main">
       <div class="card generate-card">
         <h2>
-          <span class="card-icon">✨</span>
+          <span class="card-icon"><i data-lucide="sparkles"></i></span>
           生成临时邮箱
         </h2>
         
@@ -64,7 +64,7 @@
           <div class="mailbox-display-section">
             <div class="mailbox-display-content">
               <div class="section-header">
-                <span class="section-icon">📧</span>
+                <span class="section-icon"><i data-lucide="mail"></i></span>
                 <span class="section-title">当前邮箱</span>
               </div>
               <div id="email" class="email-display">
@@ -77,27 +77,27 @@
             </div>
             <div class="mailbox-actions" id="email-actions" style="display:none">
               <button id="copy" class="btn btn-secondary" style="width:100%">
-                <span class="btn-icon">📋</span>
-                <span>复制邮箱 ✨</span>
+                <span class="btn-icon"><i data-lucide="copy"></i></span>
+                <span>复制邮箱</span>
               </button>
               <button id="compose" class="btn btn-primary" style="width:100%">
-                <span class="btn-icon">✉️</span>
+                <span class="btn-icon"><i data-lucide="send"></i></span>
                 <span>发邮件</span>
               </button>
               <button id="clear" class="btn btn-danger" style="width:100%">
-                <span class="btn-icon">🗑️</span>
-                <span>清空邮件 💥</span>
+                <span class="btn-icon"><i data-lucide="trash-2"></i></span>
+                <span>清空邮件</span>
               </button>
               <button id="refresh" class="btn btn-ghost" style="width:100%">
-                <span class="btn-icon">🔄</span>
-                <span>刷新邮件 📬</span>
+                <span class="btn-icon"><i data-lucide="refresh-cw"></i></span>
+                <span>刷新邮件</span>
               </button>
               <button id="forward-setting" class="btn btn-ghost" style="width:100%">
-                <span class="btn-icon">↪️</span>
+                <span class="btn-icon"><i data-lucide="forward"></i></span>
                 <span>转发设置</span>
               </button>
               <button id="toggle-favorite" class="btn btn-ghost" style="width:100%">
-                <span class="btn-icon" id="favorite-icon">☆</span>
+                <span class="btn-icon" id="favorite-icon"><i data-lucide="star"></i></span>
                 <span id="favorite-text">收藏邮箱</span>
               </button>
             </div>
@@ -106,7 +106,7 @@
           <!-- 右侧：邮箱配置 -->
           <div class="mailbox-config-section">
             <div class="section-header">
-              <span class="section-icon">⚙️</span>
+              <span class="section-icon"><i data-lucide="settings"></i></span>
               <span class="section-title">邮箱配置</span>
               <button id="config-toggle" class="sidebar-toggle-btn" title="展开/收起配置">
                 <span id="config-toggle-icon">▾</span>
@@ -115,14 +115,14 @@
             <div class="config-form">
               <div class="config-item">
                 <label class="config-label">
-                  <span class="label-icon">🌐</span>
+                  <span class="label-icon"><i data-lucide="globe"></i></span>
                   <span>邮箱后缀</span>
                 </label>
                 <select id="domain-select" class="select config-select"></select>
               </div>
               <div class="config-item">
                 <label class="config-label">
-                  <span class="label-icon">📏</span>
+                  <span class="label-icon"><i data-lucide="ruler"></i></span>
                   <span>用户名长度</span>
                 </label>
                 <div class="range-container">
@@ -136,11 +136,11 @@
                <div class="generate-action">
                  <div class="generate-buttons" style="display: flex; gap: 8px; margin-bottom: 8px; width: 100%;">
                    <button id="gen" class="btn btn-generate" style="flex: 1;">
-                     <span class="btn-icon">🎲</span>
+                     <span class="btn-icon"><i data-lucide="shuffle"></i></span>
                      <span>随机生成</span>
                    </button>
                    <button id="gen-name" class="btn btn-primary" style="flex: 1;" title="使用随机人名生成邮箱">
-                     <span class="btn-icon">👤</span>
+                     <span class="btn-icon"><i data-lucide="user"></i></span>
                      <span>随机人名</span>
                    </button>
                  </div>
@@ -153,7 +153,7 @@
       <div class="card inbox-card" id="list-card" style="display:none">
         <div class="listcard-header">
           <h2 class="listcard-title">
-            <span class="card-icon" id="box-icon">📬</span>
+            <span class="card-icon" id="box-icon"><i data-lucide="inbox"></i></span>
             <span id="box-title">收件箱</span>
           </h2>
           <div class="view-switch">
@@ -183,7 +183,7 @@
     <div class="modal-card">
       <div class="modal-header">
         <div id="modal-subject">
-          <span class="modal-icon">📧</span>
+          <span class="modal-icon"><i data-lucide="mail"></i></span>
           <span>邮件详情</span>
         </div>
         <button id="modal-close" class="close">✕</button>
@@ -198,7 +198,7 @@
     <div class="modal-card confirm-card">
       <div class="modal-header confirm-header">
         <div>
-          <span class="modal-icon">⚠️</span>
+          <span class="modal-icon"><i data-lucide="alert-triangle"></i></span>
           <span>确认操作</span>
         </div>
         <button id="confirm-close" class="close">✕</button>
@@ -217,7 +217,7 @@
     <div class="modal-card">
       <div class="modal-header">
         <div>
-          <span class="modal-icon">✉️</span>
+          <span class="modal-icon"><i data-lucide="send"></i></span>
           <span>新邮件</span>
         </div>
         <button id="compose-close" class="close">✕</button>

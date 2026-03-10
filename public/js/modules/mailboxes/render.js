@@ -68,18 +68,18 @@ export function renderCard(m) {
   
   return `
     <div class="mailbox-card" data-address="${addr}" data-id="${m.id}" data-action="jump">
-      ${m.is_pinned ? '<div class="pin-badge" title="置顶">📌</div>' : ''}
-      ${m.is_favorite ? '<div class="favorite-badge" title="收藏">⭐</div>' : ''}
-      ${forward ? `<div class="forward-badge" title="转发到: ${forward}">📤</div>` : ''}
+      ${m.is_pinned ? '<div class="pin-badge" title="置顶"><i data-lucide="pin"></i></div>' : ''}
+      ${m.is_favorite ? '<div class="favorite-badge" title="收藏"><i data-lucide="star"></i></div>' : ''}
+      ${forward ? `<div class="forward-badge" title="转发到: ${forward}"><i data-lucide="forward"></i></div>` : ''}
       <div class="line addr" title="${addr}">${addr}</div>
-      <div class="line pwd">${m.password_is_default ? '🔓 默认密码' : '🔐 已设密码'}</div>
-      <div class="line login">${m.can_login ? '✅ 可登录' : '🚫 禁止登录'}</div>
+      <div class="line pwd">${m.password_is_default ? '<i data-lucide="unlock"></i> 默认密码' : '<i data-lucide="lock"></i> 已设密码'}</div>
+      <div class="line login">${m.can_login ? '<i data-lucide="check"></i> 可登录' : '<i data-lucide="x-circle"></i> 禁止登录'}</div>
       <div class="line time">${time}</div>
       <div class="actions">
-        <button class="btn-icon" data-action="copy" title="复制">📋</button>
-        <button class="btn-icon" data-action="password" title="${m.password_is_default ? '设置密码' : '重置密码'}">🔑</button>
-        <button class="btn-icon" data-action="forward" title="设置转发">📤</button>
-        <button class="btn-icon ${m.is_favorite ? 'active' : ''}" data-action="favorite" title="${m.is_favorite ? '取消收藏' : '收藏'}">${m.is_favorite ? '⭐' : '☆'}</button>
+        <button class="btn-icon" data-action="copy" title="复制"><i data-lucide="copy"></i></button>
+        <button class="btn-icon" data-action="password" title="${m.password_is_default ? '设置密码' : '重置密码'}"><i data-lucide="key"></i></button>
+        <button class="btn-icon" data-action="forward" title="设置转发"><i data-lucide="forward"></i></button>
+        <button class="btn-icon ${m.is_favorite ? 'active' : ''}" data-action="favorite" title="${m.is_favorite ? '取消收藏' : '收藏'}"><i data-lucide="star"></i></button>
       </div>
     </div>`;
 }
@@ -97,28 +97,28 @@ export function renderListItem(m) {
   return `
     <div class="mailbox-list-item" data-address="${addr}" data-id="${m.id}">
       <div class="pin-indicator">
-        ${m.is_pinned ? '<span class="pin-icon">📌</span>' : '<span class="pin-placeholder"></span>'}
+        ${m.is_pinned ? '<span class="pin-icon"><i data-lucide="pin"></i></span>' : '<span class="pin-placeholder"></span>'}
       </div>
       <div class="mailbox-info">
         <div class="addr" title="${addr}">${addr}</div>
         <div class="meta">
           <span class="meta-time">${time}</span>
-          <span class="meta-status meta-pwd" title="${m.password_is_default ? '默认密码' : '已设密码'}">${m.password_is_default ? '🔓' : '🔐'}</span>
-          <span class="meta-status meta-login ${m.can_login ? 'enabled' : 'disabled'}" title="${m.can_login ? '允许登录' : '禁止登录'}">${m.can_login ? '✅' : '🚫'}</span>
-          <span class="meta-status meta-fav ${m.is_favorite ? 'active' : ''}" title="${m.is_favorite ? '已收藏' : '未收藏'}">${m.is_favorite ? '⭐' : '☆'}</span>
+          <span class="meta-status meta-pwd" title="${m.password_is_default ? '默认密码' : '已设密码'}">${m.password_is_default ? '<i data-lucide="unlock"></i>' : '<i data-lucide="lock"></i>'}</span>
+          <span class="meta-status meta-login ${m.can_login ? 'enabled' : 'disabled'}" title="${m.can_login ? '允许登录' : '禁止登录'}">${m.can_login ? '<i data-lucide="check"></i>' : '<i data-lucide="x-circle"></i>'}</span>
+          <span class="meta-status meta-fav ${m.is_favorite ? 'active' : ''}" title="${m.is_favorite ? '已收藏' : '未收藏'}"><i data-lucide="star"></i></span>
           ${forward 
-            ? `<span class="meta-forward" title="转发到: ${forward}">📤 ${forward.length > 20 ? forward.substring(0, 20) + '...' : forward}</span>` 
+            ? `<span class="meta-forward" title="转发到: ${forward}"><i data-lucide="forward"></i> ${forward.length > 20 ? forward.substring(0, 20) + '...' : forward}</span>` 
             : '<span class="meta-status meta-forward-empty" title="未设置转发">—</span>'}
         </div>
       </div>
       <div class="list-actions">
-        <button class="btn" data-action="copy" title="复制">📋</button>
-        <button class="btn" data-action="jump" title="查看邮件">📧</button>
-        <button class="btn" data-action="forward" title="转发设置">📤</button>
-        <button class="btn ${m.is_favorite ? 'active' : ''}" data-action="favorite" title="${m.is_favorite ? '取消收藏' : '收藏'}">${m.is_favorite ? '⭐' : '☆'}</button>
-        <button class="btn" data-action="login" title="${m.can_login ? '禁止登录' : '允许登录'}">${m.can_login ? '🔐' : '🔓'}</button>
-        <button class="btn" data-action="password" title="${m.password_is_default ? '设置密码' : '重置密码'}">🔑</button>
-        <button class="btn" data-action="delete" title="删除">🗑️</button>
+        <button class="btn" data-action="copy" title="复制"><i data-lucide="copy"></i></button>
+        <button class="btn" data-action="jump" title="查看邮件"><i data-lucide="mail"></i></button>
+        <button class="btn" data-action="forward" title="转发设置"><i data-lucide="forward"></i></button>
+        <button class="btn ${m.is_favorite ? 'active' : ''}" data-action="favorite" title="${m.is_favorite ? '取消收藏' : '收藏'}"><i data-lucide="star"></i></button>
+        <button class="btn" data-action="login" title="${m.can_login ? '禁止登录' : '允许登录'}">${m.can_login ? '<i data-lucide="lock"></i>' : '<i data-lucide="unlock"></i>'}</button>
+        <button class="btn" data-action="password" title="${m.password_is_default ? '设置密码' : '重置密码'}"><i data-lucide="key"></i></button>
+        <button class="btn" data-action="delete" title="删除"><i data-lucide="trash-2"></i></button>
       </div>
     </div>`;
 }

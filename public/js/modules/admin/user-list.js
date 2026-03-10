@@ -56,7 +56,7 @@ export function renderUserRow(user) {
       <td class="col-created">${createdAt}</td>
       <td class="col-actions">
         <div class="user-actions">
-          <button class="btn btn-sm btn-edit" data-action="edit" data-user-id="${id}" title="编辑">✏️</button>
+          <button class="btn btn-sm btn-edit" data-action="edit" data-user-id="${id}" title="编辑"><i data-lucide="edit-2"></i></button>
         </div>
       </td>
     </tr>

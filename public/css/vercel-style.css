@@ -1,0 +1,487 @@
+/* =============================================
+   Vercel Style Override
+   覆盖原有样式，实现极简黑白灰风格
+   ============================================= */
+
+/* ===== 1. 重置背景和卡片系统 ===== */
+body {
+  background: #ffffff !important;
+}
+
+body::before,
+body::after {
+  display: none !important;
+}
+
+.card {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.card::before,
+.card::after {
+  display: none !important;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06) !important;
+  transform: none !important;
+  border-color: #d5d5d5 !important;
+}
+
+/* ===== 2. 重置按钮样式 ===== */
+.btn {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn::before,
+.btn::after {
+  display: none !important;
+}
+
+.btn:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+  transform: none !important;
+}
+
+.btn-primary {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+.btn-primary:hover {
+  background: #333333 !important;
+  border-color: #333333 !important;
+}
+
+.btn-secondary {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #eaeaea !important;
+}
+
+.btn-secondary:hover {
+  border-color: #000000 !important;
+}
+
+.btn-danger {
+  background: #ffffff !important;
+  color: #666666 !important;
+  border-color: #eaeaea !important;
+}
+
+.btn-danger:hover {
+  background: #f5f5f5 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.btn-ghost {
+  background: transparent !important;
+  color: #666666 !important;
+  border: 1px solid transparent !important;
+}
+
+.btn-ghost:hover {
+  background: #f5f5f5 !important;
+  color: #000000 !important;
+  border-color: #eaeaea !important;
+}
+
+/* ===== 3. 重置顶部导航栏 ===== */
+.topbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #eaeaea !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.topbar::before {
+  display: none !important;
+}
+
+.brand {
+  font-weight: 700 !important;
+}
+
+.brand-icon {
+  font-size: 20px !important;
+  animation: none !important;
+}
+
+.brand span {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: inherit !important;
+  background-clip: unset !important;
+  color: #000000 !important;
+  animation: none !important;
+}
+
+/* ===== 4. 重置侧边栏 ===== */
+.sidebar {
+  background: #fafafa !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.sidebar::before {
+  display: none !important;
+}
+
+/* ===== 5. 重置输入框 ===== */
+.input,
+.select,
+.field-input,
+.field-textarea,
+.config-select {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.input:focus,
+.select:focus,
+.field-input:focus,
+.field-textarea:focus,
+.config-select:focus {
+  border-color: #000000 !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+  outline: none !important;
+}
+
+/* ===== 6. 重置邮箱列表项 ===== */
+.mailbox-item {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding-left: 16px !important;
+}
+
+.mailbox-item::before {
+  display: none !important;
+}
+
+.mailbox-item:hover {
+  background: #fafafa !important;
+  border-color: #d5d5d5 !important;
+  transform: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+.mailbox-item.selected {
+  background: #f5f5f5 !important;
+  border: 2px solid #000000 !important;
+  border-left: 4px solid #000000 !important;
+  box-shadow: none !important;
+}
+
+.mailbox-item.selected::before {
+  display: none !important;
+}
+
+/* ===== 7. 重置邮件列表项 ===== */
+.email-item {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.email-item::before,
+.email-item::after {
+  display: none !important;
+}
+
+.email-item:hover {
+  background: #fafafa !important;
+  border-color: #d5d5d5 !important;
+  transform: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ===== 8. 重置模态框 ===== */
+.modal {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.modal-card {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 8px !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.modal-header {
+  background: #fafafa !important;
+  border-bottom: 1px solid #eaeaea !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.modal-header::before {
+  display: none !important;
+}
+
+.modal-body {
+  background: #ffffff !important;
+}
+
+/* ===== 9. 重置徽章和标签 ===== */
+.chip {
+  background: #f5f5f5 !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  color: #666666 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.status-badge {
+  background: #fafafa !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ===== 10. 重置角色徽章 ===== */
+.role-badge {
+  background: #f5f5f5 !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  color: #666666 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.role-badge:hover {
+  transform: none !important;
+}
+
+.role-admin {
+  background: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.role-super {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* ===== 11. 移除动画效果 ===== */
+@keyframes backgroundFloat,
+@keyframes backgroundPulse,
+@keyframes bannerShimmer,
+@keyframes iconPulse,
+@keyframes iconSpin,
+@keyframes iconFloat,
+@keyframes gradientFlow,
+@keyframes emailGenerated,
+@keyframes emailShine,
+@keyframes shimmer,
+@keyframes pulse,
+@keyframes ripple,
+@keyframes iconGlow,
+@keyframes sidebarPulse,
+@keyframes fadeInUp,
+@keyframes expandLayout {
+  0%, 100% {
+    animation: none !important;
+  }
+}
+
+/* ===== 12. 暗色模式 ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  .card,
+  .modal-card {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+  }
+  
+  .card:hover {
+    border-color: #4d4d4d !important;
+  }
+  
+  .btn {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+    color: #ffffff !important;
+  }
+  
+  .btn:hover {
+    background: #1a1a1a !important;
+    border-color: #ffffff !important;
+  }
+  
+  .btn-primary {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+  }
+  
+  .btn-primary:hover {
+    background: #e6e6e6 !important;
+  }
+  
+  .topbar {
+    background: #000000 !important;
+    border-color: #333333 !important;
+  }
+  
+  .sidebar {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+  }
+  
+  .input,
+  .select {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+    color: #ffffff !important;
+  }
+  
+  .input:focus,
+  .select:focus {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  .mailbox-item,
+  .email-item {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+  }
+  
+  .mailbox-item:hover,
+  .email-item:hover {
+    background: #1a1a1a !important;
+    border-color: #4d4d4d !important;
+  }
+  
+  .mailbox-item.selected {
+    background: #1a1a1a !important;
+    border-color: #ffffff !important;
+  }
+  
+  .brand span {
+    color: #ffffff !important;
+  }
+  
+  .modal-header {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+  }
+  
+  .modal-body {
+    background: #0a0a0a !important;
+  }
+}
+
+/* ===== 13. 简化圆角 ===== */
+.topbar,
+.sidebar,
+.card,
+.btn,
+.input,
+.select,
+.mailbox-item,
+.email-item,
+.chip,
+.status-badge,
+.role-badge {
+  border-radius: 4px !important;
+}
+
+.modal-card {
+  border-radius: 8px !important;
+}
+
+/* ===== 14. 简化字体 ===== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ===== 15. 移除玻璃态效果 ===== */
+.btn,
+.card,
+.topbar,
+.sidebar,
+.mailbox-item,
+.email-item,
+.chip,
+.status-badge,
+.role-badge,
+.input,
+.select,
+.modal-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ===== 16. 简化阴影 ===== */
+.card,
+.btn,
+.mailbox-item,
+.email-item {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+.card:hover,
+.mailbox-item:hover,
+.email-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.modal-card {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* ===== 17. 移除hover变换 ===== */
+.btn:hover,
+.card:hover,
+.mailbox-item:hover,
+.email-item:hover {
+  transform: none !important;
+}

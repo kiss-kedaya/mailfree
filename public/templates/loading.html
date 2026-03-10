@@ -6,6 +6,13 @@
     <title>加载中 - 临时邮箱</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+    
+    <!-- Lucide Icons - Vercel Style -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/css/icons.css" />
+    <link rel="stylesheet" href="/css/vercel-style.css" />
+    <script src="/js/icon-init.js"></script>
+    
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
@@ -37,7 +44,7 @@
   </head>
   <body>
     <div class="loading-container">
-      <div class="logo">📧</div>
+      <div class="logo"><i data-lucide="mail" style="width:64px;height:64px"></i></div>
       <h1 class="title">临时邮箱</h1>
       <div class="spinner"></div>
       <div class="status">请稍候...</div>

@@ -91,7 +91,7 @@
               existingEnter.className = 'btn btn-primary';
               existingEnter.style.width = '100%';
               existingEnter.style.marginTop = '0';
-              existingEnter.innerHTML = '<span class="btn-icon">📬</span><span>进入邮箱</span>';
+              existingEnter.innerHTML = '<span class="btn-icon"><i data-lucide="inbox"></i></span><span>进入邮箱</span>';
               actions.appendChild(existingEnter);
               existingEnter.onclick = function(){
                 try{
@@ -162,7 +162,7 @@
                     iconBtn.style.alignItems = 'center';
                     iconBtn.style.justifyContent = 'center';
                     iconBtn.style.padding = '0';
-                    iconBtn.innerHTML = '<span class="btn-icon" style="margin:0">🔄</span>';
+                    iconBtn.innerHTML = '<span class="btn-icon" style="margin:0"><i data-lucide="refresh-cw"></i></span>';
                     header.appendChild(iconBtn);
                     iconBtn.onclick = function(e){
                       try{

@@ -13,8 +13,15 @@
     <style>.precheck-hide body{ visibility: hidden !important; }</style>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+    
+    <!-- Lucide Icons - Vercel Style -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/css/icons.css" />
+    
     <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/vercel-style.css" />
     <link rel="stylesheet" href="/css/admin.css" />
+    <script src="/js/icon-init.js"></script>
     <script src="/js/auth-guard.js" defer></script>
     <script>
       // 访问管理页先做前端快速鉴权，避免内容闪现；未登录或权限不足均进入 loading 或回首页
@@ -40,16 +47,16 @@
   <body class="admin-page">
     <div class="topbar">
       <div class="brand">
-        <span class="brand-icon">🚀</span>
+        <span class="brand-icon"><i data-lucide="rocket"></i></span>
         <span>iDing's临时邮箱 - 用户管理</span>
       </div>
       <div class="nav-actions">
         <button id="back" class="btn btn-ghost" title="返回邮箱">
-          <span>📧</span>
+          <span><i data-lucide="mail"></i></span>
           <span>返回邮箱</span>
         </button>
         <button id="logout" class="btn btn-secondary" title="退出登录">
-          <span>👋</span>
+          <span><i data-lucide="log-out"></i></span>
           <span>退出登录</span>
         </button>
       </div>
@@ -58,20 +65,20 @@
     <div class="admin-container">
       <div class="admin-left">
         <div class="card">
-          <h2><span class="card-icon">👤</span><span>用户管理</span></h2>
+          <h2><span class="card-icon"><i data-lucide="user"></i></span><span>用户管理</span></h2>
           <div class="generate-action">
             <button id="u-open" class="btn btn-primary">
-              <span>➕</span>
+              <span><i data-lucide="plus"></i></span>
               <span>创建用户</span>
             </button>
           </div>
           <div class="generate-action generate-action-row">
             <button id="unassign-open" class="btn btn-secondary">
-              <span>📭</span>
+              <span><i data-lucide="inbox"></i></span>
               <span>取消分配</span>
             </button>
             <button id="a-open" class="btn btn-primary">
-              <span>📬</span>
+              <span><i data-lucide="inbox"></i></span>
               <span>分配邮箱</span>
             </button>
           </div>
@@ -79,9 +86,9 @@
    
         <div class="card">
           <div class="card-header">
-            <h2><span class="card-icon">📋</span><span>用户列表</span><span id="users-count" class="users-count">（0 用户）</span></h2>
+            <h2><span class="card-icon"><i data-lucide="list"></i></span><span>用户列表</span><span id="users-count" class="users-count">（0 用户）</span></h2>
             <button id="users-refresh" class="btn btn-ghost btn-sm" title="刷新用户列表">
-              <span>🔄</span>
+              <span><i data-lucide="refresh-cw"></i></span>
               <span>刷新</span>
             </button>
           </div>
@@ -120,9 +127,9 @@
       <div class="admin-right">
         <div class="card">
           <div class="card-header">
-            <h2><span class="card-icon">📦</span><span>用户的邮箱列表</span><span id="mailboxes-count" class="mailboxes-count">（0 邮箱）</span></h2>
+            <h2><span class="card-icon"><i data-lucide="box"></i></span><span>用户的邮箱列表</span><span id="mailboxes-count" class="mailboxes-count">（0 邮箱）</span></h2>
             <button id="mailboxes-refresh" class="btn btn-ghost btn-sm" title="刷新邮箱列表" style="display:none">
-              <span>🔄</span>
+              <span><i data-lucide="refresh-cw"></i></span>
               <span>刷新</span>
             </button>
           </div>
@@ -152,7 +159,7 @@
         <div class="modal-card">
           <div class="modal-header">
             <div>
-              <span class="modal-icon">✏️</span>
+              <span class="modal-icon"><i data-lucide="edit-2"></i></span>
               <span>编辑用户</span>
               <span id="edit-user-display" class="user-chip"></span>
             </div>
@@ -191,7 +198,7 @@
         <div class="modal-card confirm-card">
           <div class="modal-header confirm-header">
             <div>
-              <span class="modal-icon">🔔</span>
+              <span class="modal-icon"><i data-lucide="bell"></i></span>
               <span>确认操作</span>
             </div>
             <button id="admin-confirm-close" class="close">✕</button>
@@ -209,7 +216,7 @@
         <div class="modal-card">
           <div class="modal-header">
             <div>
-              <span class="modal-icon">👤</span>
+              <span class="modal-icon"><i data-lucide="user"></i></span>
               <span>创建用户</span>
             </div>
             <button id="u-close" class="close">✕</button>
@@ -232,7 +239,7 @@
         <div class="modal-card">
           <div class="modal-header">
             <div>
-              <span class="modal-icon">📬</span>
+              <span class="modal-icon"><i data-lucide="inbox"></i></span>
               <span>分配邮箱</span>
             </div>
             <button id="a-close" class="close">✕</button>
@@ -258,7 +265,7 @@
         <div class="modal-card">
           <div class="modal-header">
             <div>
-              <span class="modal-icon">📬</span>
+              <span class="modal-icon"><i data-lucide="inbox"></i></span>
               <span>取消分配邮箱</span>
             </div>
             <button id="unassign-close" class="close">✕</button>

@@ -65,7 +65,7 @@ export function renderEmailItem(email) {
       </div>
       <div class="email-subject">${subject}</div>
       <div class="email-preview">${preview}</div>
-      ${verificationCode ? `<div class="email-code" title="点击复制验证码">🔑 ${escapeHtml(verificationCode)}</div>` : ''}
+      ${verificationCode ? `<div class="email-code" title="点击复制验证码"><i data-lucide="key"></i> ${escapeHtml(verificationCode)}</div>` : ''}
     </div>
   `;
 }

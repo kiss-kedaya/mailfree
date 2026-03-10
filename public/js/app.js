@@ -95,7 +95,7 @@ async function refresh() {
     const ctrl = new AbortController(); const timeout = setTimeout(() => ctrl.abort(), 8000);
     let emails = [];
     try { const r = await api(url, { signal: ctrl.signal }); emails = await r.json(); } finally { clearTimeout(timeout); }
-    if (!Array.isArray(emails) || !emails.length) { els.list.innerHTML = '<div style="text-align:center;color:#64748b">📭 暂无邮件</div>'; if (els.pager) els.pager.style.display = 'none'; return; }
+    if (!Array.isArray(emails) || !emails.length) { els.list.innerHTML = '<div style="text-align:center;color:#64748b"><i data-lucide="inbox" style="width:24px;height:24px;opacity:0.3"></i> 暂无邮件</div>'; if (els.pager) els.pager.style.display = 'none'; if (window.refreshIcons) window.refreshIcons(); return; }
     const isMobile = window.matchMedia?.('(max-width: 900px)').matches;
     els.list.innerHTML = sliceByPage(emails, els).map(e => renderEmailItem(e, isMobile)).join('');
     if (!isSentViewActive()) prefetchEmails(emails, api);
@@ -122,7 +122,7 @@ async function loadMailboxes(opts = {}) {
   finally { setLoading(false); if (els.mbLoading) els.mbLoading.style.display = 'none'; }
 }
 
-function updateMailboxInfoUI(info) { if (!info) return; if (els.favoriteIcon && els.favoriteText) { els.favoriteIcon.textContent = info.is_favorite ? '⭐' : '☆'; els.favoriteText.textContent = info.is_favorite ? '已收藏' : '收藏'; }}
+function updateMailboxInfoUI(info) { if (!info) return; if (els.favoriteIcon && els.favoriteText) { els.favoriteIcon.innerHTML = info.is_favorite ? '<i data-lucide="star"></i>' : '<i data-lucide="star"></i>'; els.favoriteText.textContent = info.is_favorite ? '已收藏' : '收藏'; if (window.refreshIcons) window.refreshIcons(); }}
 
 // 全局函数
 window.selectMailbox = (addr) => selectMailboxAddress(addr, els, api, refresh, autoRefreshCallback, updateMailboxInfoUI);
@@ -149,8 +149,8 @@ if (els.modalClose) els.modalClose.onclick = () => els.modal?.classList.remove('
 els.modal?.addEventListener('click', (e) => { if (e.target === els.modal) els.modal.classList.remove('show'); });
 
 // 视图切换
-if (els.tabInbox) els.tabInbox.onclick = () => { setView(false); els.tabInbox.classList.add('active'); els.tabSent?.classList.remove('active'); if (els.boxTitle) els.boxTitle.textContent = '收件箱'; if (els.boxIcon) els.boxIcon.textContent = '📥'; resetPager(els); refresh(); };
-if (els.tabSent) els.tabSent.onclick = () => { setView(true); els.tabSent.classList.add('active'); els.tabInbox?.classList.remove('active'); if (els.boxTitle) els.boxTitle.textContent = '发件箱'; if (els.boxIcon) els.boxIcon.textContent = '📤'; resetPager(els); refresh(); };
+if (els.tabInbox) els.tabInbox.onclick = () => { setView(false); els.tabInbox.classList.add('active'); els.tabSent?.classList.remove('active'); if (els.boxTitle) els.boxTitle.textContent = '收件箱'; if (els.boxIcon) { els.boxIcon.innerHTML = '<i data-lucide="inbox"></i>'; if (window.refreshIcons) window.refreshIcons(); } resetPager(els); refresh(); };
+if (els.tabSent) els.tabSent.onclick = () => { setView(true); els.tabSent.classList.add('active'); els.tabInbox?.classList.remove('active'); if (els.boxTitle) els.boxTitle.textContent = '发件箱'; if (els.boxIcon) { els.boxIcon.innerHTML = '<i data-lucide="send"></i>'; if (window.refreshIcons) window.refreshIcons(); } resetPager(els); refresh(); };
 
 // 分页
 if (els.prevPage) els.prevPage.onclick = () => prevPage(refresh);

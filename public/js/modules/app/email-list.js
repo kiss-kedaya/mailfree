@@ -182,10 +182,10 @@ export function renderEmailItem(email, isMobile = false) {
         <div class="email-actions">
           ${isSentView ? `
             <span class="status-badge ${statusClass(e.status)}">${e.status || 'unknown'}</span>
-            <button class="btn btn-danger btn-sm" onclick="deleteSent(${e.id});event.stopPropagation()" title="删除记录"><span class="btn-icon">🗑️</span></button>
+            <button class="btn btn-danger btn-sm" onclick="deleteSent(${e.id});event.stopPropagation()" title="删除记录"><span class="btn-icon"><i data-lucide="trash-2"></i></span></button>
           ` : `
-            <button class="btn btn-secondary btn-sm" data-code="${listCode || ''}" onclick="copyFromList(event, ${e.id});event.stopPropagation()" title="复制内容或验证码"><span class="btn-icon">📋</span></button>
-            <button class="btn btn-danger btn-sm" onclick="deleteEmail(${e.id});event.stopPropagation()" title="删除邮件"><span class="btn-icon">🗑️</span></button>
+            <button class="btn btn-secondary btn-sm" data-code="${listCode || ''}" onclick="copyFromList(event, ${e.id});event.stopPropagation()" title="复制内容或验证码"><span class="btn-icon"><i data-lucide="copy"></i></span></button>
+            <button class="btn btn-danger btn-sm" onclick="deleteEmail(${e.id});event.stopPropagation()" title="删除邮件"><span class="btn-icon"><i data-lucide="trash-2"></i></span></button>
           `}
         </div>
       </div>

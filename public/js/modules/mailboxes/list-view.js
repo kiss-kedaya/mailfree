@@ -58,7 +58,7 @@ export function renderMailboxListItem(mailbox, options = {}) {
   return `
     <div class="mailbox-list-item ${isPinned ? 'pinned' : ''}" data-address="${escapedAddress}">
       <div class="item-pin ${isPinned ? 'active' : ''}" data-action="pin" title="${isPinned ? '取消置顶' : '置顶'}">
-        ${isPinned ? '📌' : '📍'}
+        <i data-lucide="${isPinned ? 'pin' : 'pin'}"></i>
       </div>
       
       <div class="item-content">
@@ -66,20 +66,20 @@ export function renderMailboxListItem(mailbox, options = {}) {
         <div class="item-meta">
           <span class="item-time">${createdAt}</span>
           <span class="item-indicators">
-            ${isFavorite ? '<span class="indicator favorite" title="已收藏">⭐</span>' : ''}
-            ${forwardTo ? `<span class="indicator forward" title="转发至: ${escapeAttr(forwardTo)}">📤</span>` : ''}
-            ${canLogin ? '<span class="indicator login" title="可登录">🔑</span>' : ''}
+            ${isFavorite ? '<span class="indicator favorite" title="已收藏"><i data-lucide="star"></i></span>' : ''}
+            ${forwardTo ? `<span class="indicator forward" title="转发至: ${escapeAttr(forwardTo)}"><i data-lucide="forward"></i></span>` : ''}
+            ${canLogin ? '<span class="indicator login" title="可登录"><i data-lucide="key"></i></span>' : ''}
           </span>
         </div>
       </div>
       
       <div class="item-actions">
-        <button class="btn btn-sm" data-action="copy" title="复制">📋</button>
-        <button class="btn btn-sm" data-action="jump" title="查看">📧</button>
-        <button class="btn btn-sm ${isFavorite ? 'active' : ''}" data-action="favorite" title="${isFavorite ? '取消收藏' : '收藏'}">⭐</button>
-        <button class="btn btn-sm" data-action="forward" title="转发设置">📤</button>
-        <button class="btn btn-sm" data-action="toggle-login" title="${canLogin ? '禁止登录' : '允许登录'}">🔑</button>
-        <button class="btn btn-sm danger" data-action="delete" title="删除">🗑️</button>
+        <button class="btn btn-sm" data-action="copy" title="复制"><i data-lucide="copy"></i></button>
+        <button class="btn btn-sm" data-action="jump" title="查看"><i data-lucide="mail"></i></button>
+        <button class="btn btn-sm ${isFavorite ? 'active' : ''}" data-action="favorite" title="${isFavorite ? '取消收藏' : '收藏'}"><i data-lucide="star"></i></button>
+        <button class="btn btn-sm" data-action="forward" title="转发设置"><i data-lucide="forward"></i></button>
+        <button class="btn btn-sm" data-action="toggle-login" title="${canLogin ? '禁止登录' : '允许登录'}"><i data-lucide="key"></i></button>
+        <button class="btn btn-sm danger" data-action="delete" title="删除"><i data-lucide="trash-2"></i></button>
       </div>
     </div>
   `;
@@ -109,7 +109,7 @@ export function renderListView(mailboxes, container, options = {}) {
 export function renderTableHeader() {
   return `
     <div class="table-header">
-      <div class="col-pin">📌</div>
+      <div class="col-pin"><i data-lucide="pin"></i></div>
       <div class="col-address">邮箱地址</div>
       <div class="col-status">状态</div>
       <div class="col-time">创建时间</div>
@@ -135,22 +135,22 @@ export function renderTableRow(mailbox) {
   const displayAddress = escapeHtml(address);
   
   const statusIcons = [
-    isFavorite ? '⭐' : '',
-    forwardTo ? '📤' : '',
-    canLogin ? '🔑' : ''
+    isFavorite ? '<i data-lucide="star"></i>' : '',
+    forwardTo ? '<i data-lucide="forward"></i>' : '',
+    canLogin ? '<i data-lucide="key"></i>' : ''
   ].filter(Boolean).join(' ');
   
   return `
     <div class="table-row ${isPinned ? 'pinned' : ''}" data-address="${escapedAddress}">
       <div class="col-pin">
-        <button class="btn btn-sm ${isPinned ? 'active' : ''}" data-action="pin">${isPinned ? '📌' : '📍'}</button>
+        <button class="btn btn-sm ${isPinned ? 'active' : ''}" data-action="pin"><i data-lucide="pin"></i></button>
       </div>
       <div class="col-address" title="${escapedAddress}">${displayAddress}</div>
       <div class="col-status">${statusIcons || '-'}</div>
       <div class="col-time">${createdAt}</div>
       <div class="col-actions">
-        <button class="btn btn-sm" data-action="copy" title="复制">📋</button>
-        <button class="btn btn-sm" data-action="jump" title="查看">📧</button>
+        <button class="btn btn-sm" data-action="copy" title="复制"><i data-lucide="copy"></i></button>
+        <button class="btn btn-sm" data-action="jump" title="查看"><i data-lucide="mail"></i></button>
         <button class="btn btn-sm" data-action="more" title="更多">⋯</button>
       </div>
     </div>

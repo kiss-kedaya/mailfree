@@ -24,7 +24,7 @@ export async function showEmailDetail(id, elements, api, showToast) {
       setEmailCache(id, email);
     }
     
-    modalSubject.innerHTML = `<span class="modal-icon">📧</span><span>${escapeHtml(email.subject || '(无主题)')}</span>`;
+    modalSubject.innerHTML = `<span class="modal-icon"><i data-lucide="mail"></i></span><span>${escapeHtml(email.subject || '(无主题)')}</span>`;
     
     let contentHtml = '';
     const code = email.verification_code || extractCode(email.content || email.html_content || '');
@@ -32,7 +32,7 @@ export async function showEmailDetail(id, elements, api, showToast) {
     if (code) {
       contentHtml += `
         <div class="verification-code-box" style="margin-bottom:16px;padding:12px;background:var(--success-light);border-radius:8px;display:flex;align-items:center;gap:12px">
-          <span style="font-size:20px">🔑</span>
+          <i data-lucide="key" style="width:20px;height:20px"></i>
           <span style="font-size:18px;font-weight:600;font-family:monospace;cursor:pointer" onclick="navigator.clipboard.writeText('${code}').then(()=>showToast('验证码已复制','success'))">${code}</span>
           <span style="font-size:12px;color:var(--text-muted)">点击复制</span>
         </div>`;
