@@ -98,6 +98,7 @@ async function refresh() {
     if (!Array.isArray(emails) || !emails.length) { els.list.innerHTML = '<div style="text-align:center;color:#64748b"><i data-lucide="inbox" style="width:24px;height:24px;opacity:0.3"></i> 暂无邮件</div>'; if (els.pager) els.pager.style.display = 'none'; if (window.refreshIcons) window.refreshIcons(); return; }
     const isMobile = window.matchMedia?.('(max-width: 900px)').matches;
     els.list.innerHTML = sliceByPage(emails, els).map(e => renderEmailItem(e, isMobile)).join('');
+    if (window.refreshIcons) window.refreshIcons();
     if (!isSentViewActive()) prefetchEmails(emails, api);
     markViewLoaded();
   } catch (_) {}
@@ -122,7 +123,7 @@ async function loadMailboxes(opts = {}) {
   finally { setLoading(false); if (els.mbLoading) els.mbLoading.style.display = 'none'; }
 }
 
-function updateMailboxInfoUI(info) { if (!info) return; if (els.favoriteIcon && els.favoriteText) { els.favoriteIcon.innerHTML = info.is_favorite ? '<i data-lucide="star"></i>' : '<i data-lucide="star"></i>'; els.favoriteText.textContent = info.is_favorite ? '已收藏' : '收藏'; if (window.refreshIcons) window.refreshIcons(); }}
+function updateMailboxInfoUI(info) { if (!info) return; if (els.favoriteIcon && els.favoriteText) { const isFav = Boolean(info.is_favorite); els.favoriteIcon.innerHTML = isFav ? '<i data-lucide="star"></i>' : '<i data-lucide="star" style="opacity:0.3"></i>'; els.favoriteIcon.style.fill = isFav ? 'currentColor' : 'none'; els.favoriteText.textContent = isFav ? '已收藏' : '收藏'; if (window.refreshIcons) window.refreshIcons(); }}
 
 // 全局函数
 window.selectMailbox = (addr) => selectMailboxAddress(addr, els, api, refresh, autoRefreshCallback, updateMailboxInfoUI);

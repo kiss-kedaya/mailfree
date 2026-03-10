@@ -126,6 +126,7 @@ async function loadUsers() {
     totalUsers = data.total || users.length;
     
     renderUserList(users, els.usersTbody);
+    if (window.refreshIcons) window.refreshIcons();
     updatePagination();
     if (els.usersCount) els.usersCount.textContent = totalUsers;
     

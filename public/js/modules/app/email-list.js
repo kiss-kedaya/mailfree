@@ -172,7 +172,7 @@ export function renderEmailItem(email, isMobile = false) {
     <div class="email-item clickable" onclick="${isSentView ? `showSentEmail(${e.id})` : `showEmail(${e.id})`}">
       <div class="email-meta">
         <span class="meta-from"><span class="meta-label">${metaLabel}</span><span class="meta-from-text">${metaText}</span></span>
-        <span class="email-time"><span class="time-icon">🕐</span>${timeDisplay}</span>
+        <span class="email-time"><span class="time-icon"><i data-lucide="clock"></i></span>${timeDisplay}</span>
       </div>
       <div class="email-content">
         <div class="email-main">

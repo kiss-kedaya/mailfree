@@ -485,3 +485,308 @@ body {
 .email-item:hover {
   transform: none !important;
 }
+
+/* ===== 18. Toast 通知 Vercel 风格 ===== */
+.toast {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.toast .toast-icon {
+  width: 18px !important;
+  height: 18px !important;
+  flex-shrink: 0;
+}
+
+/* 暗色模式下的 Toast */
+@media (prefers-color-scheme: dark) {
+  .toast {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+  }
+}
+
+/* ===== 19. 移除所有旋转动画 ===== */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.brand-icon,
+.card-icon,
+.modal-icon,
+.sidebar-icon,
+.btn-icon,
+.toast-icon,
+.status-icon {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* ===== 20. 大幅简化动画系统 ===== */
+* {
+  animation-duration: 0s !important;
+  transition-duration: 0.15s !important;
+}
+
+/* 仅保留必要的过渡效果 */
+.btn,
+.card,
+.mailbox-item,
+.email-item,
+.modal,
+.modal-card {
+  transition: opacity 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+/* ===== 21. 简化状态徽章 ===== */
+.status-badge {
+  background: #f5f5f5 !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  padding: 4px 10px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #666666 !important;
+}
+
+.status-queued {
+  color: #000000 !important;
+  background: #fafafa !important;
+  border-color: #d5d5d5 !important;
+}
+
+.status-delivered {
+  color: #000000 !important;
+  background: #fafafa !important;
+  border-color: #000000 !important;
+}
+
+.status-failed {
+  color: #000000 !important;
+  background: #fafafa !important;
+  border-color: #000000 !important;
+}
+
+.status-processing {
+  color: #666666 !important;
+  background: #fafafa !important;
+  border-color: #d5d5d5 !important;
+}
+
+/* ===== 22. 简化输入框 ===== */
+.input,
+.select,
+.field-input,
+.field-textarea,
+.config-select,
+.form-input,
+.search-input {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 4px !important;
+  color: #000000 !important;
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: border-color 0.15s ease !important;
+}
+
+.input:focus,
+.select:focus,
+.field-input:focus,
+.field-textarea:focus,
+.config-select:focus,
+.form-input:focus,
+.search-input:focus {
+  border-color: #000000 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== 23. 简化表格 ===== */
+.table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+.table th {
+  background: #fafafa !important;
+  border-bottom: 1px solid #eaeaea !important;
+  padding: 10px 12px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  color: #000000 !important;
+  font-size: 12px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.table td {
+  border-bottom: 1px solid #f5f5f5 !important;
+  padding: 12px !important;
+  color: #333333 !important;
+  font-size: 14px !important;
+}
+
+.table tr:hover {
+  background: #fafafa !important;
+}
+
+/* ===== 24. 简化分页器 ===== */
+.pager {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 16px 0 !important;
+}
+
+.pager .btn {
+  min-width: 80px !important;
+}
+
+/* ===== 25. 简化骨架屏 ===== */
+.skeleton-line,
+.skeleton-row {
+  background: #f5f5f5 !important;
+  animation: none !important;
+}
+
+/* ===== 26. 优化空状态 ===== */
+.empty-state {
+  padding: 48px 24px !important;
+  text-align: center !important;
+  color: #666666 !important;
+}
+
+.empty-icon {
+  margin-bottom: 16px !important;
+  opacity: 0.3 !important;
+}
+
+.empty-title {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #999999 !important;
+}
+
+/* ===== 27. 简化确认对话框 ===== */
+.confirm-card {
+  max-width: 420px !important;
+}
+
+.confirm-header {
+  background: #fafafa !important;
+  border-bottom: 1px solid #eaeaea !important;
+}
+
+.confirm-body {
+  padding: 20px !important;
+}
+
+.confirm-message {
+  margin-bottom: 20px !important;
+  color: #333333 !important;
+  font-size: 14px !important;
+}
+
+.confirm-actions {
+  display: flex !important;
+  gap: 12px !important;
+  justify-content: flex-end !important;
+}
+
+/* ===== 28. 暗色模式全局优化 ===== */
+@media (prefers-color-scheme: dark) {
+  .status-badge {
+    background: #1a1a1a !important;
+    border-color: #333333 !important;
+    color: #cccccc !important;
+  }
+  
+  .status-queued,
+  .status-delivered,
+  .status-failed,
+  .status-processing {
+    background: #1a1a1a !important;
+    border-color: #4d4d4d !important;
+    color: #ffffff !important;
+  }
+  
+  .table th {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+    color: #ffffff !important;
+  }
+  
+  .table td {
+    border-color: #1a1a1a !important;
+    color: #e6e6e6 !important;
+  }
+  
+  .table tr:hover {
+    background: #1a1a1a !important;
+  }
+  
+  .input,
+  .select {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+    color: #ffffff !important;
+  }
+  
+  .empty-state {
+    color: #999999 !important;
+  }
+  
+  .confirm-header {
+    background: #0a0a0a !important;
+    border-color: #333333 !important;
+  }
+  
+  .confirm-message {
+    color: #e6e6e6 !important;
+  }
+}
+
+/* ===== 29. 移除所有复杂的渐变背景 ===== */
+body::before,
+body::after,
+.card::before,
+.card::after,
+.modal-header::before,
+.topbar::before,
+.sidebar::before,
+.btn::before,
+.btn::after,
+.mailbox-item::before,
+.email-item::before,
+.email-item::after,
+.status-badge::before,
+.chip::before {
+  display: none !important;
+  background: none !important;
+}
+
+/* ===== 30. 统一字体系统 ===== */
+body,
+input,
+select,
+textarea,
+button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}

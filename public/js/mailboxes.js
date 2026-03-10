@@ -96,6 +96,7 @@ async function load() {
       if (els.empty) els.empty.style.display = 'block';
     } else {
       els.grid.innerHTML = currentView === 'grid' ? renderGrid(list) : renderList(list);
+      if (window.refreshIcons) window.refreshIcons();
       if (els.empty) els.empty.style.display = 'none';
     }
     
@@ -218,6 +219,7 @@ function switchView(view) {
   els.grid.className = view;
   if (currentData.length) {
     els.grid.innerHTML = view === 'grid' ? renderGrid(currentData) : renderList(currentData);
+    if (window.refreshIcons) window.refreshIcons();
     bindCardEvents();
   }
 }
@@ -322,10 +324,11 @@ async function executePasswordAction() {
 // 打开批量操作模态框
 function openBatchModal(action, title, icon, message) {
   currentBatchAction = action;
-  if (els.batchModalIcon) els.batchModalIcon.textContent = icon;
+  if (els.batchModalIcon) els.batchModalIcon.innerHTML = icon;
   if (els.batchModalTitle) els.batchModalTitle.textContent = title;
   if (els.batchModalMessage) els.batchModalMessage.textContent = message;
   if (els.batchEmailsInput) els.batchEmailsInput.value = '';
+  if (window.refreshIcons) window.refreshIcons();
   if (els.batchCountInfo) els.batchCountInfo.textContent = '输入邮箱后将显示数量统计';
   if (els.batchModalConfirm) els.batchModalConfirm.disabled = true;
   

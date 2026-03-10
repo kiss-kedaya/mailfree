@@ -51,12 +51,19 @@ export async function showToast(message, type = 'info', duration = 3000) {
     info: 'info'
   };
   
-  // 背景色映射
+  // 背景色映射（Vercel 风格）
   const colors = {
-    success: '#10b981',
-    error: '#ef4444',
-    warning: '#f59e0b',
-    info: '#3b82f6'
+    success: '#000000',
+    error: '#000000',
+    warning: '#000000',
+    info: '#000000'
+  };
+  
+  const borderColor = {
+    success: '#000000',
+    error: '#000000',
+    warning: '#000000',
+    info: '#000000'
   };
   
   toast.style.cssText = `
@@ -66,12 +73,14 @@ export async function showToast(message, type = 'info', duration = 3000) {
     padding: 12px 16px;
     background: ${colors[type] || colors.info};
     color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid ${borderColor[type] || borderColor.info};
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     font-size: 14px;
+    font-weight: 500;
     opacity: 0;
     transform: translateX(100%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
   `;
   
   toast.innerHTML = `
